@@ -1,0 +1,22 @@
+
+
+
+from re import A
+
+
+endereco_ip = str(input(f"Endereço de IP: "))
+contagem_em_bits = int(input(f"Contagem em bits da mascara de rede desejada: "))
+
+numero_de_hosts_possiveis = 0
+numero_de_redes_possiveis = 2 ** (contagem_em_bits - 24 )
+
+soma = contagem_em_bits - 24
+
+for a in range( 1 , 7 ) :
+    if soma != 0 :
+        numero_de_hosts_possiveis += 2 ** a
+    else : 
+        break
+soma -= 1
+
+print(endereco_ip, contagem_em_bits, numero_de_hosts_possiveis, numero_de_redes_possiveis)
