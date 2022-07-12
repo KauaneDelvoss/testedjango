@@ -1,0 +1,16 @@
+
+endereco_ip = str(input(f"Endereço de IP: "))
+mascara_ip = str(input(f"Máscara do Endereço: "))
+contagem_em_bits = int(input(f"Contagem em bits da mascara de rede desejada: "))
+
+hosts = 0
+redes = 2 ** (contagem_em_bits - 24 )
+
+
+endereco = endereco_ip.split('.')
+mascara = mascara_ip.split('.')
+
+print(endereco, mascara)    #transformar em mascara
+
+
+
