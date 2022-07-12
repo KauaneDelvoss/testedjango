@@ -1,0 +1,53 @@
+## Calculando Máscaras de Rede
+Cada três dígitos na máscara correspondem a um octeto. Cada bit no octeto corresponde a um valor decimal, que é a somado ao fim e gera o trio da máscara.
+
+__Exemplo__: 
+Máscara: 255.255.255.0 
+Binário: 11111111.11111111.11111111.10000000
+Soma do último octeto: __2^7__, 2^6, 2^5, 2^4, 2^3, 2^2, 2^1, 2^0 = 128
+
+ou seja, __255.255.255.128__!
+
+------------------------------
+
+## Criando Sub-Redes
+- Os bits 1 denominam a porção de REDE
+- Os bits 0 determinam o HOST
+
+__Para criar redes, podemos transformar alguns bits 0 em 1.__
+
+
+__EXEMPLO:__ 11111111.11111111.11111111.0000000 -> 11111111.11111111.11111111.10000000
+
+**1 x 2^7 + 0 x 2^6 + 0 x 2^5 + 0 x 2^4 + 0 x 2^3 + 0 x 2^2 + 0 x 2^1 + 0 x 2^0**
+
+__Máscara inicial:__ 255.255.255.000
+__Máscara final:__ 255.255.255.128
+
+_Mas quantas redes eu tenho com essa máscara?_
+
+Vamos elevar o número de bits possíveis __2__ ao número de bits emprestados da porção do host ( 1 ).
+
+2 ** 1 = 2 redes 
+
+Todo endereço IP possui uma [[Máscara de Rede]] correspondente. A máscara serve para identificar qual parte do endereço pertence ao host e qual parte pertence à rede.
+
+Por exemplo, o endereço __192.168.0.50__ com uma máscara __255.255.255.0__, identifica como parte da rede o endereço:
+
+__192.168.0__
+
+e o host: 
+
+__50__
+
+
+
+
+-----------------------
+
+1. poetry add djangorestframework
+2. file settings : installed apps -> 'rest_framework'
+3. add file core: serializers.py
+4. in serializer: import model,create class XSerlializer -> class Meta : model = X, fields = "_-_all_"
+5. in urls : import include - path, from rest_frameworks.routers improt DefaultRouter
+
