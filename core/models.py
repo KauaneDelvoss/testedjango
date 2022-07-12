@@ -43,4 +43,4 @@ class Livros(models.Model):
         verbose_name_plural = "Livros"
 
     def __str__(self):
-        return self.titulo
+        return (f"{self.titulo} ({self.quantidade})")
